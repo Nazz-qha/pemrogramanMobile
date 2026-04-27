@@ -1,7 +1,5 @@
 package com.example.myapplication  // Sesuaikan dengan package name kamu!
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,10 +7,12 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class MainActivity : AppCompatActivity() {
+
+class RegisterActivity : AppCompatActivity() {
 
     // DECLARE SEMUA VIEW
     // TextInputLayout (untuk tampilkan error)
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     // onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
 
         // 1. Inisialisasi semua view
         initViews()
@@ -410,11 +410,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSuccessDialog(nama: String) {
         AlertDialog.Builder(this)
-            .setTitle("🎉 Pendaftaran Berhasil!")
-            .setMessage("Selamat, $nama!\n\nAkun kamu berhasil didaftarkan.\nSilakan cek email untuk verifikasi.")
-            .setPositiveButton("OK") { dialog, _ ->
+            .setTitle("Pendaftaran Berhasil!")
+            .setMessage("Selamat, $nama!\n\nAkun kamu berhasil dibuat.\nSilakan login dengan akun baru kamu.")
+            .setPositiveButton("Login Sekarang") { dialog, _ ->
                 dialog.dismiss()
-                resetForm()
+
+                // Kirim email & password yang baru didaftarkan ke LoginActivity
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.putExtra("REGISTERED_EMAIL", etEmail.text.toString().trim())
+                intent.putExtra("REGISTERED_PASSWORD", etPassword.text.toString())
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
             }
             .setCancelable(false)
             .show()

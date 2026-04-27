@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4FF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Banner Sukses -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎉"
+                    android:textSize="48sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendaftaran Berhasil!"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat, kamu telah terdaftar!"
+                    android:textColor="#C8E6C9"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Detail Data -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Detail Pendaftaran"
+                    android:textColor="#3F51B5"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Nama -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Nama" android:textColor="#757575" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvHasilNama" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#212121"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Email -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Email" android:textColor="#757575" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvHasilEmail" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#212121"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- HP -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Nomor HP" android:textColor="#757575" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvHasilHp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#212121"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- JK -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin" android:textColor="#757575" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvHasilJK" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#212121"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Seminar -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Seminar Dipilih" android:textColor="#757575" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvHasilSeminar" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#3F51B5"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKembaliHome"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:text="KEMBALI KE HALAMAN UTAMA"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"/>
+
+    </LinearLayout>
+</ScrollView>
